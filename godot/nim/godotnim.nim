@@ -757,7 +757,7 @@ template arrayToVariant(s: untyped): Variant =
   newVariant(arr)
 
 proc toVariant*[T](s: seq[T]): Variant =
-  if s.isNil:
+  if s.len() == 0:
     return newVariant()
   result = arrayToVariant(s)
 
